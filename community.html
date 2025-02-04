@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>부동산 플러스 - 커뮤니티</title>
+    <link rel="stylesheet" href="./css/webfont.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/community.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="./js/jquery-3.7.1.js"></script>
+    <script src="./js/common.js" defer></script>
+
+</head>
+<body>
+    <nav class="navbar">
+        <h1 class="hidden">부동산 플러스 이용메뉴</h1>
+        <div class="nav-container">
+            <a href="#" class="logo">부동산 플러스</a>
+            <ul class="nav-menu">
+                <li><a href="./index.html"><i class="fas fa-home"></i> 홈</a></li>
+                <li><a href="./company.html"><i class="fas fa-building"></i> 회사소개</a></li>
+                <li><a href="./product.html"><i class="fas fa-list"></i> 매물찾기</a></li>
+                <li><a href="./contactus.html"><i class="fas fa-envelope"></i> 문의하기</a></li>
+                <li><a href="./community.html"><i class="fas fa-users"></i> 커뮤니티</a></li>
+                <li><a href="./login.html"><i class="fas fa-user"></i> 로그인/회원가입</a></li>
+            </ul>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <section class="community-header">
+        <h1>부동산 플러스 커뮤니티</h1>
+        <p>다양한 부동산 정보와 경험을 공유해보세요</p>
+    </section>
+
+    <div class="category-tabs">
+        <button class="tab-btn active">전체글</button>
+        <button class="tab-btn">부동산 뉴스</button>
+        <button class="tab-btn">시장동향</button>
+        <button class="tab-btn">매물후기</button>
+        <button class="tab-btn">질문/답변</button>
+        <button class="tab-btn">자유게시판</button>
+    </div>
+
+    <section class="post-list">
+        <div class="post-controls">
+            <div class="search-box">
+                <input type="text" placeholder="게시글 검색">
+                <><i class="fas fa-search"></i></>
+            </div>
+            <button class="write-btn">
+                <i class="fas fa-pen"></i>
+                글쓰기
+            </button>
+        </div>
+
+        <div class="posts">
+            <div class="post-item">
+                <span class="badge notice">공지</span>
+                <div class="post-title">커뮤니티 이용규칙 안내</div>
+                <div class="post-meta">
+                    <span><i class="fas fa-user"></i> 관리자</span>
+                    <span><i class="fas fa-calendar"></i> 2024-02-03</span>
+                    <span><i class="fas fa-eye"></i> 1,234</span>
+                </div>
+            </div>
+
+            <div class="post-item">
+                <span class="badge hot">인기</span>
+                <div class="post-title">강남 집값 전망 분석</div>
+                <div class="post-meta">
+                    <span><i class="fas fa-user"></i> 부동산전문가</span>
+                    <span><i class="fas fa-calendar"></i> 2024-02-03</span>
+                    <span><i class="fas fa-eye"></i> 856</span>
+                    <span><i class="fas fa-comment"></i> 23</span>
+                </div>
+            </div>
+
+            <div class="post-item">
+                <span class="badge review">후기</span>
+                <div class="post-title">신축 아파트 실거주 후기입니다</div>
+                <div class="post-meta">
+                    <span><i class="fas fa-user"></i> 실거주자</span>
+                    <span><i class="fas fa-calendar"></i> 2024-02-02</span>
+                    <span><i class="fas fa-eye"></i> 432</span>
+                    <span><i class="fas fa-comment"></i> 15</span>
+                </div>
+            </div>
+
+            <div class="post-item">
+                <span class="badge qna">질문</span>
+                <div class="post-title">전세계약 갱신 관련 질문드립니다</div>
+                <div class="post-meta">
+                    <span><i class="fas fa-user"></i> 계약문의</span>
+                    <span><i class="fas fa-calendar"></i> 2024-02-02</span>
+                    <span><i class="fas fa-eye"></i> 245</span>
+                    <span><i class="fas fa-comment"></i> 8</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="pagination">
+            <a href="#"><i class="fas fa-chevron-left"></i></a>
+            <a href="#" class="active">1</a>
+            <a href="#">2</a>
+            <a href="#">3</a>
+            <a href="#">4</a>
+            <a href="#">5</a>
+            <a href="#"><i class="fas fa-chevron-right"></i></a>
+        </div>
+    </section>
+    <div class="fixed-buttons">
+        <button id="pageUpBtn" class="fixed-btn" title="페이지 위로">
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        <button id="chatBtn" class="fixed-btn" title="실시간 상담">
+            <i class="fas fa-comments"></i>
+        </button>
+    </div>
+</body>
+</html>

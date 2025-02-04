@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>부동산 플러스</title>
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/webfont.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="./js/jquery-3.7.1.js"></script>
+    <script src="./js/common.js" defer></script>
+    <script src="./js/main.js" defer></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <h1 class="hidden">부동산 플러스 이용메뉴</h1>
+        <div class="nav-container">
+            <a href="#" class="logo">부동산 플러스</a>
+            <ul class="nav-menu">
+                <li><a href="./index.html"><i class="fas fa-home"></i> 홈</a></li>
+                <li><a href="./company.html"><i class="fas fa-building"></i> 회사소개</a></li>
+                <li><a href="./product.html"><i class="fas fa-list"></i> 매물찾기</a></li>
+                <li><a href="./contactus.html"><i class="fas fa-envelope"></i> 문의하기</a></li>
+                <li><a href="./community.html"><i class="fas fa-users"></i> 커뮤니티</a></li>
+                <li><a href="./login.html"><i class="fas fa-user"></i> 로그인/회원가입</a></li>
+            </ul>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>당신의 이상적인 부동산을 찾아보세요</h1>
+        <p>신뢰할 수 있는 부동산 중개 서비스</p>
+        <div class="search-container">
+            <input type="text" placeholder="지역, 지하철역, 학교 등으로 검색">
+            <button class="search-btn">검색</button>
+        </div>
+    </section>
+
+    <!-- Featured Properties -->
+    <section class="properties">
+        <h2 class="section-title">추천 매물</h2>
+        <div class="property-grid">
+            <figure class="property-card">
+                <img src="./images/apt.jpg" alt="Property" class="property-image">
+                <div class="property-content">
+                    <figcaption>모던 신축 아파트</figcaption>
+                    <p class="property-address">강남구 삼성동 30평대 아파트</p>
+                    <p class="property-price">10억 원</p>
+                    <a href="#" class="btn">매물 보기</a>
+                </div>
+            </figure>
+            <figure class="property-card">
+                <img src="./images/officetel.jpg" alt="Property" class="property-image">
+                <div class="property-content">
+                    <figcaption>역세권 오피스텔</figcaption>
+                    <p class="property-address">서초구 서초동 20평대 오피스텔</p>
+                    <p class="property-price">5억 원</p>
+                    <a href="#" class="btn">매물 보기</a>
+                </div>
+            </figure>
+            <figure class="property-card">
+                <img src="./images/store.jpg" alt="Property" class="property-image">
+                <div class="property-content">
+                    <figcaption>프리미엄 상가</figcaption>
+                    <p class="property-address">송파구 잠실동 40평대 상가</p>
+                    <p class="property-price">15억 원</p>
+                    <a href="#" class="btn">매물 보기</a>
+                </div>
+            </figure>
+        </div>
+    </section>
+
+    <!-- Categories -->
+    <section class="categories">
+        <h2 class="section-title">매물 유형</h2>
+        <div class="category-grid">
+            <article class="category-card">
+                <i class="fas fa-building fa-2x"></i>
+                <h3>아파트</h3>
+                <a href="#" class="btn">매물 보기</a>
+            </article>
+            <article class="category-card">
+                <i class="fas fa-city fa-2x"></i>
+                <h3>오피스텔</h3>
+                <a href="#" class="btn">매물 보기</a>
+            </article>
+            <article class="category-card">
+                <i class="fas fa-store fa-2x"></i>
+                <h3>상가</h3>
+                <a href="#" class="btn">매물 보기</a>
+            </article>
+            <article class="category-card">
+                <i class="fas fa-map fa-2x"></i>
+                <h3>토지</h3>
+                <a href="#" class="btn">매물 보기</a>
+            </article>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h4>회사 소개</h4>
+                <ul class="footer-links">
+                    <li><a href="#"><i class="fas fa-building"></i> 회사 개요</a></li>
+                    <li><a href="#"><i class="fas fa-history"></i> 연혁</a></li>
+                    <li><a href="#"><i class="fas fa-map-marker-alt"></i> 오시는 길</a></li>
+                    <li><a href="#"><i class="fas fa-handshake"></i> 제휴문의</a></li>
+                </ul>
+            </div>
+    
+            <div class="footer-section">
+                <h4>매물 정보</h4>
+                <ul class="footer-links">
+                    <li><a href="#"><i class="fas fa-building"></i> 아파트</a></li>
+                    <li><a href="#"><i class="fas fa-city"></i> 오피스텔</a></li>
+                    <li><a href="#"><i class="fas fa-store"></i> 상가</a></li>
+                    <li><a href="#"><i class="fas fa-map"></i> 토지</a></li>
+                </ul>
+            </div>
+    
+            <div class="footer-section">
+                <h4>고객센터</h4>
+                <ul class="footer-links">
+                    <li><a href="#"><i class="fas fa-question-circle"></i> 자주 묻는 질문</a></li>
+                    <li><a href="#"><i class="fas fa-envelope"></i> 1:1 문의</a></li>
+                    <li><a href="#"><i class="fas fa-exclamation-circle"></i> 공지사항</a></li>
+                    <li><a href="#"><i class="fas fa-phone"></i> 전화상담</a></li>
+                </ul>
+            </div>
+    
+            <div class="footer-section">
+                <h4>연락처</h4>
+                <div class="contact-info">
+                    <i class="fas fa-phone"></i>
+                    <span>02-1234-5678</span>
+                </div>
+                <div class="contact-info">
+                    <i class="fas fa-envelope"></i>
+                    <span>contact@budongsan.plus</span>
+                </div>
+                <div class="contact-info">
+                    <i class="fas fa-clock"></i>
+                    <span>평일 09:00 - 18:00</span>
+                </div>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-blogger-b"></i></a>
+                </div>
+            </div>
+        </div>
+    
+        <div class="footer-bottom">
+            <p>상호: (주)부동산플러스 | 대표: 홍길동 | 사업자등록번호: 123-45-67890</p>
+            <p>주소: 서울특별시 강남구 테헤란로 123 부동산플러스빌딩 15층</p>
+            <p>중개업등록번호: 제12345-67890호 | 개인정보책임관리자: 홍길동</p>
+            <p>&copy; 2024 부동산플러스. All rights reserved.</p>
+        </div>
+    </footer>
+<div class="fixed-buttons">
+    <button id="pageUpBtn" class="fixed-btn" title="페이지 위로">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    <button id="chatBtn" class="fixed-btn" title="실시간 상담">
+        <i class="fas fa-comments"></i>
+    </button>
+</div>
+
+<!-- Chat Modal -->
+<div id="chatModal" class="chat-modal">
+    <div class="chat-container">
+        <div class="chat-header">
+            <h3>실시간 상담</h3>
+            <button id="closeChatBtn">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="chat-messages">
+            <div class="message system">
+                상담원과 연결중입니다. 잠시만 기다려주세요...
+            </div>
+        </div>
+        <div class="chat-input">
+            <input type="text" id="messageInput" placeholder="메시지를 입력하세요...">
+            <button id="sendMessageBtn">
+                <i class="fas fa-paper-plane"></i>
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- fixed buttons -->
+<div class="fixed-buttons">
+    <button id="pageUpBtn" class="fixed-btn" title="페이지 위로">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    <button id="chatBtn" class="fixed-btn" title="실시간 상담">
+        <i class="fas fa-comments"></i>
+    </button>
+</div>
+
+<!-- Chat Modal -->
+<div id="chatModal" class="chat-modal">
+    <div class="chat-container">
+        <div class="chat-header">
+            <h3>실시간 상담</h3>
+            <button id="closeChatBtn">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="chat-messages">
+            <div class="message system">
+                상담원과 연결중입니다. 잠시만 기다려주세요...
+            </div>
+        </div>
+        <div class="chat-input">
+            <input type="text" id="messageInput" placeholder="메시지를 입력하세요...">
+            <button id="sendMessageBtn">
+                <i class="fas fa-paper-plane"></i>
+            </button>
+        </div>
+    </div>
+</div>
+</body>
+</html>

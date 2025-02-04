@@ -1,0 +1,177 @@
+@charset "utf-8";
+/* Core variables */
+:root {
+    --primary: #4f46e5;
+    --secondary: #64748b;
+    --background: #f8fafc;
+    --surface: #ffffff;
+    --text: #0f172a;
+    --text-light: #64748b;
+    --border: #e2e8f0;
+    --radius: 1rem;
+    --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+    --transition: all 0.3s ease;
+}
+.hidden {
+    position:absolute;
+    width: 1px; height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+}
+
+/* Company Page Specific Styles */
+.company-header {
+    background-color: var(--primary);
+    color: white;
+    padding: 8rem 2rem 4rem;
+    text-align: center;
+}
+.company-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+.content-section {
+    max-width: 1200px;
+    margin: 4rem auto;
+    padding: 0 2rem;
+}
+.mission-vision {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+.info-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: 0.5s ease;
+}
+
+.info-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.info-card h3 {
+    color: var(--primary);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 4rem auto;
+}
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 2px;
+    background: var(--primary);
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -1px;
+}
+.timeline-item {
+    padding: 1rem 2rem;
+    position: relative;
+    width: 50%;
+    margin-bottom: 2rem;
+}
+
+.timeline-item::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: var(--primary);
+    border-radius: 50%;
+    top: 50%;
+    right: -10px;
+    margin-top: -10px;
+}
+.timeline-item:nth-child(even) {
+    left: 50%;
+}
+.timeline-item:nth-child(even)::after {
+    left: -10px;
+}
+
+.timeline-item dd {font-size: 1.25rem;}
+
+/* team introduction */
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+.team-member {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: 0.5s ease;
+}
+
+.team-member:hover {
+    background: var(--primary);
+    color: #fff;
+    transform: translateY(-5px);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.team-member img {
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    max-width: 100%;
+    height: auto;
+}
+.team-member figcaption {
+    font-size: 1.5rem;
+}
+
+.contact-info {
+    display: flex;
+    justify-content: space-around;
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    margin-top: 2rem;
+}
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 6rem;
+    margin-top: 2rem;
+}
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.contact-item i {
+    color: var(--primary);
+    font-size: 1.25rem;
+}
+
+.contact-item a {
+    text-decoration: none;
+    color: var(--text);
+}
+
+/* Map container */
+
+.map-container {
+    display: flex;
+    justify-content: center;
+}
+.map-container iframe {
+    margin-top: 2rem;
+    border-radius: 8px;
+}

@@ -1,0 +1,203 @@
+@charset "utf-8";
+
+/* Core variables */
+:root {
+    --primary: #4f46e5;
+    --secondary: #64748b;
+    --background: #f8fafc;
+    --surface: #ffffff;
+    --text: #0f172a;
+    --text-light: #64748b;
+    --border: #e2e8f0;
+    --radius: 1rem;
+    --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+    --transition: all 0.3s ease;
+}
+/* Hero section animations */
+.hero {
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('../images/hero.jpg') center/cover no-repeat;
+    color: white;
+    margin-top: 60px;
+    animation: fadeIn 1s ease;
+}
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    opacity: 0;
+    animation: slideUp 0.8s ease forwards;
+    animation-delay: 0.3s;
+}
+.hero p {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    opacity: 0;
+    animation: slideUp 0.8s ease forwards;
+    animation-delay: 0.5s;
+}
+.search-container {
+    display: flex;
+    gap: 1rem;
+    max-width: 800px;
+    width: 100%;
+    opacity: 0;
+    animation: slideUp 0.8s ease forwards;
+    animation-delay: 0.7s;
+}
+.search-container input {
+    flex: 1;
+    padding: 1rem;
+    border: none;
+    border-radius: var(--radius);
+    font-size: 1rem;
+}
+.search-btn {
+    padding: 1rem 2rem;
+    color: white;
+    background-color: transparent;
+    border: none;
+    border-radius: var(--radius);
+    border: 2px solid #fff;
+    cursor: pointer;
+    transition: var(--transition);
+}
+.search-btn:hover {
+    background-color: #fff;
+    color: var(--primary);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* Property section animations */
+.properties {
+    padding: 4rem 2rem;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+.section-title {
+    text-align: center;
+    margin-bottom: 3rem;
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
+    animation-delay: 0.3s;
+}
+.property-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+.property-card {
+    background: var(--surface);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    opacity: 0;
+    animation: fadeIn 0.8s ease forwards;
+    animation-delay: calc(var(--card-index) * 0.2s);
+}
+.property-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+}
+.property-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.property-card:hover .property-image {
+    transform: scale(1.1);
+}
+
+.property-content {
+    padding: 1rem;
+}
+
+.property-content p {
+    font-size: 1.25rem;
+}
+
+.property-price {
+    margin-top: 1rem;
+    text-align: right;
+}
+
+
+/* Categories section animations */
+.categories {
+    padding: 4rem 2rem;
+    background: var(--background);
+}
+.category-grid {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+}
+.category-card {
+    background: var(--surface);
+    padding: 2rem;
+    border-radius: var(--radius);
+    text-align: center;
+    transition: var(--transition);
+    cursor: pointer;
+    opacity: 0;
+    animation: fadeIn 0.8s ease forwards;
+    animation-delay: calc(var(--card-index) * 0.2s);
+}
+.category-card:hover {
+    transform: translateY(-5px) scale(1.03);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+}
+
+.category-card h3 {
+    margin-top: 1rem;
+    font-size: 1.5rem;
+}
+
+.category-card i {
+    color: var(--primary);
+    margin-bottom: 1rem;
+    transition: var(--transition);
+}
+.category-card:hover i {
+    transform: scale(1.2);
+}
+
+.banners {
+    margin: 4rem;
+    position: relative;
+    width: 100%;
+    height: calc(150px)
+}
+
+.btn {
+    display: block;
+    margin-top: 2rem;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    color: var(--primary);
+    border: 2px solid var(--primary);
+    border-radius: 10px;
+    text-align: center;
+    transition: 0.5s ease;
+}
+
+.btn:hover {
+    background: var(--primary);
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+}
