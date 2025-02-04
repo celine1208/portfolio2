@@ -152,29 +152,33 @@
         </button>
     </div>
     <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
     <script>
-        Kakao.init("eef15779b68285626a1de3405e34d053");
-
-        document.getElementById("contactForm").addEventListener("submit", function (event) {
-          event.preventDefault();
-      
-          const name = document.getElementById("name").value;
-          const phone = document.getElementById("phone").value;
-          const email = document.getElementById("email").value;
-          const inquiryType = document.getElementById("inquiry-type").value;
-          const message = document.getElementById("message").value;
-      
-          Kakao.Link.sendDefault({
-            objectType: "text",
-            text: `문의가 접수되었습니다.\n\n이름: ${name}\n연락처: ${phone}\n이메일: ${email}\n문의 유형: ${inquiryType}\n문의 내용: ${message}`,
-            link: {
-              mobileWebUrl: "http://127.0.0.1:5500/contactus.html",
-              webUrl: "http://127.0.0.1:5500/contactus.html"
-            }
+      (function() {
+        emailjs.init("YOUR_USER_ID"); // Replace with your EmailJS User ID
+      })();
+    
+      document.getElementById("contactForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+    
+        const formData = {
+          name: document.getElementById("name").value,
+          phone: document.getElementById("phone").value,
+          email: document.getElementById("email").value,
+          inquiryType: document.getElementById("inquiry-type").value,
+          message: document.getElementById("message").value,
+        };
+    
+        emailjs.send("service_qzzdgvh", "template_my56cpr", formData)
+          .then(function(response) {
+            alert("문의가 성공적으로 접수되었습니다! 📩");
+            console.log("Email sent successfully:", response);
+          })
+          .catch(function(error) {
+            alert("이메일 전송에 실패했습니다. 😢");
+            console.error("Email send error:", error);
           });
-      
-          alert("카카오톡 메시지 보내기 창이 열립니다.");
-        });
-      </script>
+      });
+    </script>
 </body>
 </html>
