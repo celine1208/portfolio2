@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="./css/webfont.css">
     <link rel="stylesheet" href="./css/common.css">
     <link rel="stylesheet" href="./css/community.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uuid/8.3.2/uuid.min.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <script src="./js/jquery-3.7.1.js"></script>
     <script src="./js/common.js" defer></script>
@@ -45,6 +46,45 @@
         <button class="tab-btn">자유게시판</button>
     </div>
 
+    <!-- 게시글 작성 모달 -->
+    <div id="writeModal" class="modal">
+        <div class="modal-content">
+            <h2>게시글 작성</h2>
+            <select id="postCategory" required>
+                <option value="">카테고리 선택</option>
+                <option value="news">부동산 뉴스</option>
+                <option value="trend">시장동향</option>
+                <option value="review">매물후기</option>
+                <option value="qna">질문/답변</option>
+                <option value="free">자유게시판</option>
+            </select>
+            <input type="text" id="postTitle" placeholder="제목을 입력하세요" required>
+            <textarea id="postContent" placeholder="내용을 입력하세요" required></textarea>
+            <div class="modal-buttons">
+                <button onclick="savePost()">저장</button>
+                <button onclick="closeModal()">취소</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 게시글 상세보기 모달 -->
+    <div id="viewModal" class="modal">
+        <div class="modal-content">
+            <h2 id="viewTitle"></h2>
+            <div class="post-info">
+                <span id="viewAuthor"></span>
+                <span id="viewDate"></span>
+                <span id="viewViews"></span>
+            </div>
+            <div id="viewContent"></div>
+            <div class="modal-buttons" id="postActions">
+                <button onclick="editPost()">수정</button>
+                <button onclick="deletePost()">삭제</button>
+                <button onclick="closeViewModal()">닫기</button>
+            </div>
+        </div>
+    </div>
+
     <section class="post-list">
         <div class="post-controls">
             <div class="search-box">
@@ -56,7 +96,7 @@
                 글쓰기
             </button>
         </div>
-
+        
         <div class="posts">
             <div class="post-item">
                 <span class="badge notice">공지</span>
