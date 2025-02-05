@@ -16,10 +16,11 @@
 <body>
     <!-- Navigation -->
     <header>
+        <h1 class="hidden">부동산 플러스</h1>
         <nav class="navbar">
-            <h1 class="hidden">부동산 플러스 이용메뉴</h1>
+            <h2 class="hidden">부동산 플러스 이용메뉴</h2>
             <div class="nav-container">
-                <a href="#" class="logo">부동산 플러스</a>
+                <a href="./index.html" class="logo">부동산 플러스</a>
                 <ul class="nav-menu">
                     <li><a href="./index.html"><i class="fas fa-home"></i> 홈</a></li>
                     <li><a href="./company.html"><i class="fas fa-building"></i> 회사소개</a></li>
@@ -34,47 +35,45 @@
             </div>
         </nav>
     </header>
-
     <!-- Hero Section -->
     <section class="hero">
-        <h1>당신의 이상적인 부동산을 찾아보세요</h1>
+        <h2>당신의 이상적인 부동산을 찾아보세요</h2>
         <p>신뢰할 수 있는 부동산 중개 서비스</p>
         <div class="search-container">
             <input type="text" placeholder="지역, 지하철역, 학교 등으로 검색">
             <button class="search-btn">검색</button>
         </div>
     </section>
-
     <!-- Featured Properties -->
     <section class="properties">
         <h2 class="section-title">추천 매물</h2>
         <div class="property-grid">
             <figure class="property-card">
                 <img src="./images/apt.jpg" alt="Property" class="property-image">
-                <div class="property-content">
-                    <figcaption>모던 신축 아파트</figcaption>
+                <figcaption class="property-content">
+                    <p class="tag">모던 신축 아파트</p>
                     <p class="property-address">강남구 삼성동 30평대 아파트</p>
                     <p class="property-price">10억 원</p>
                     <a href="./detail.html" class="btn">매물 보기</a>
-                </div>
+                </figcaption>
             </figure>
             <figure class="property-card">
                 <img src="./images/officetel.jpg" alt="Property" class="property-image">
-                <div class="property-content">
-                    <figcaption>역세권 오피스텔</figcaption>
+                <figcaption class="property-content">
+                    <p class="tag">역세권 오피스텔</p>
                     <p class="property-address">서초구 서초동 20평대 오피스텔</p>
                     <p class="property-price">5억 원</p>
                     <a href="./detail.html" class="btn">매물 보기</a>
-                </div>
+                </figcaption>
             </figure>
             <figure class="property-card">
                 <img src="./images/store.jpg" alt="Property" class="property-image">
-                <div class="property-content">
-                    <figcaption>프리미엄 상가</figcaption>
+                <figcaption class="property-content">
+                    <p class="tag">프리미엄 상가</p>
                     <p class="property-address">송파구 잠실동 40평대 상가</p>
                     <p class="property-price">15억 원</p>
                     <a href="./detail.html" class="btn">매물 보기</a>
-                </div>
+                </figcaption>
             </figure>
         </div>
     </section>
@@ -156,38 +155,6 @@
             <p>&copy; 2024 부동산플러스. All rights reserved.</p>
         </div>
     </footer>
-<div class="fixed-buttons">
-    <button id="pageUpBtn" class="fixed-btn" title="페이지 위로">
-        <i class="fas fa-arrow-up"></i>
-    </button>
-    <button id="chatBtn" class="fixed-btn" title="실시간 상담">
-        <i class="fas fa-comments"></i>
-    </button>
-</div>
-
-<!-- Chat Modal -->
-<div id="chatModal" class="chat-modal">
-    <div class="chat-container">
-        <div class="chat-header">
-            <h3>실시간 상담</h3>
-            <button id="closeChatBtn">
-                <i class="fas fa-times"></i>
-            </button>
-        </div>
-        <div class="chat-messages">
-            <div class="message system">
-                상담원과 연결중입니다. 잠시만 기다려주세요...
-            </div>
-        </div>
-        <div class="chat-input">
-            <input type="text" id="messageInput" placeholder="메시지를 입력하세요...">
-            <button id="sendMessageBtn">
-                <i class="fas fa-paper-plane"></i>
-            </button>
-        </div>
-    </div>
-</div>
-
 <!-- fixed buttons -->
 <div class="fixed-buttons">
     <button id="pageUpBtn" class="fixed-btn" title="페이지 위로">
@@ -197,7 +164,6 @@
         <i class="fas fa-comments"></i>
     </button>
 </div>
-
 <!-- Chat Modal -->
 <div id="chatModal" class="chat-modal">
     <div class="chat-container">

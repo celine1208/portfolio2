@@ -15,7 +15,7 @@
 <body>
     <!-- Navigation -->
     <header>
-        <h1 class="hidden">부동산 플러스</h1>
+        <h1 class="hidden">부동산 플러스 매물찾기</h1>
         <nav class="navbar">
             <h2 class="hidden">부동산 플러스 이용메뉴</h2>
             <div class="nav-container">
@@ -34,86 +34,18 @@
             </div>
         </nav>
     </header>
-
     <!-- Category Header -->
-    <header class="category-header">
-        <h1>매물 찾기</h1>
+    <section class="category-header">
+        <h2>매물 찾기</h2>
         <p>다양한 매물 정보를 카테고리별로 확인하세요</p>
-    </header>
+    </section>
 
     <!-- Main Content -->
     <main class="category-container">
-        <!-- Filter Sidebar -->
-        <aside class="filters">
-            <button class=filter-btn>검색하기</button>
-            <!-- 매물유형 -->
-            <ul class="filter-section">
-                <li class="filter-title">매물 유형</li>
-                <li class="filter-option">
-                    <input type="checkbox" id="apt" checked>
-                    <label for="apt">아파트</label>
-                </li>
-                <li class="filter-option">
-                    <input type="checkbox" id="officetel" checked>
-                    <label for="officetel">오피스텔</label>
-                </li>
-                <li class="filter-option">
-                    <input type="checkbox" id="commercial" checked>
-                    <label for="commercial">상가</label>
-                </li>
-                <li class="filter-option">
-                    <input type="checkbox" id="land" checked>
-                    <label for="land">토지</label>
-                </li>
-            </ul>
-            <!-- 가격대 -->
-            <ul class="filter-section">
-                <li class="filter-title">가격대</li>
-                <li class="price-range">
-                    <input type="text" placeholder="최소">
-                    <input type="text" placeholder="최대">
-                </li>
-            </ul>
-            <!-- 평수 -->
-            <ul class="filter-section">
-                <li class="filter-title">평수</li>
-                <li class="filter-option">
-                    <input type="checkbox" id="size1">
-                    <label for="size1">20평 이하</label>
-                </li>
-                <li class="filter-option">
-                    <input type="checkbox" id="size2">
-                    <label for="size2">20-30평</label>
-                </li>
-                <li class="filter-option">
-                    <input type="checkbox" id="size3">
-                    <label for="size3">30-40평</label>
-                </li>
-                <li class="filter-option">
-                    <input type="checkbox" id="size4">
-                    <label for="size4">40평 이상</label>
-                </li>
-            </ul>
-            <!-- 옵션 -->
-            <ul class="filter-section">
-                <li class="filter-title">옵션</li>
-                <li class="filter-option">
-                    <input type="checkbox" id="parking">
-                    <label for="parking">주차가능</label>
-                </li>
-                <li class="filter-option">
-                    <input type="checkbox" id="elevator">
-                    <label for="elevator">엘리베이터</label>
-                </li>
-                <li class="filter-option">
-                    <input type="checkbox" id="security">
-                    <label for="security">보안/경비</label>
-                </li>
-            </ul>
-        </aside>
-        <section>
+        <div class="sidebar-container">
             <!-- 정렬 바  -->
-            <aside class="options-bar">
+            <aside class="options-bar" title="매물 정렬 옵션">
+                <h3 class="hidden">매물 정렬 옵션</h3>
                 <div class="sort-options">
                     <label>정렬: </label>
                     <select>
@@ -123,11 +55,79 @@
                         <option>면적순</option>
                     </select>
                 </div>
-                <div class="view-options">
-                    <button class="active" title="사진으로 보기"><i class="fas fa-th"></i></button>
-                    <button><i class="fas fa-list" title="목록으로 보기"></i></button>
-                </div>
             </aside>
+            <!-- Filter Sidebar -->
+            <aside class="filters">
+                <h3 class="hidden">매물 검색 옵션</h3>
+                <button class=filter-btn>검색하기</button>
+                <!-- 매물유형 -->
+                <ul class="filter-section">
+                    <li class="filter-title">매물 유형</li>
+                    <li class="filter-option">
+                        <input type="checkbox" id="apt" checked>
+                        <label for="apt">아파트</label>
+                    </li>
+                    <li class="filter-option">
+                        <input type="checkbox" id="officetel" checked>
+                        <label for="officetel">오피스텔</label>
+                    </li>
+                    <li class="filter-option">
+                        <input type="checkbox" id="commercial" checked>
+                        <label for="commercial">상가</label>
+                    </li>
+                    <li class="filter-option">
+                        <input type="checkbox" id="land" checked>
+                        <label for="land">토지</label>
+                    </li>
+                </ul>
+                <!-- 가격대 -->
+                <ul class="filter-section">
+                    <li class="filter-title">가격대</li>
+                    <li class="price-range">
+                        <input type="text" placeholder="최소">
+                        <input type="text" placeholder="최대">
+                    </li>
+                </ul>
+                <!-- 평수 -->
+                <ul class="filter-section">
+                    <li class="filter-title">평수</li>
+                    <li class="filter-option">
+                        <input type="checkbox" id="size1">
+                        <label for="size1">20평 이하</label>
+                    </li>
+                    <li class="filter-option">
+                        <input type="checkbox" id="size2">
+                        <label for="size2">20-30평</label>
+                    </li>
+                    <li class="filter-option">
+                        <input type="checkbox" id="size3">
+                        <label for="size3">30-40평</label>
+                    </li>
+                    <li class="filter-option">
+                        <input type="checkbox" id="size4">
+                        <label for="size4">40평 이상</label>
+                    </li>
+                </ul>
+                <!-- 옵션 -->
+                <ul class="filter-section">
+                    <li class="filter-title">옵션</li>
+                    <li class="filter-option">
+                        <input type="checkbox" id="parking">
+                        <label for="parking">주차가능</label>
+                    </li>
+                    <li class="filter-option">
+                        <input type="checkbox" id="elevator">
+                        <label for="elevator">엘리베이터</label>
+                    </li>
+                    <li class="filter-option">
+                        <input type="checkbox" id="security">
+                        <label for="security">보안/경비</label>
+                    </li>
+                </ul>
+            </aside>
+        </div>
+        <section>
+            <h2 class="hidden">매물 리스트</h2>
             <!--  매물 -->
             <div class="property-grid">
                 <!-- Property Cards -->

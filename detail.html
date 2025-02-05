@@ -8,14 +8,18 @@
     <link rel="stylesheet" href="./css/webfont.css">
     <link rel="stylesheet" href="./css/common.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=y2goxe1let"></script>
     <script src="./js/jquery-3.7.1.js"></script>
     <script src="./js/common.js" defer></script>
     <script src="./js/detail.js" defer></script>
 </head>
 <body>
     <!-- Navigation from index.html -->
-    <nav class="navbar">
-        <h1 class="hidden">부동산 플러스 이용메뉴</h1>
+    <header>
+        <h1 class="hidden">부동산 플러스 매물정보</h1>
+        <nav class="navbar">
+        <h2 class="hidden">부동산 플러스 이용메뉴</h2>
         <div class="nav-container">
             <a href="#" class="logo">부동산 플러스</a>
             <ul class="nav-menu">
@@ -31,30 +35,26 @@
             </div>
         </div>
     </nav>
-
+    </header>
     <!-- Property Detail Content -->
     <main class="property-detail">
         <div class="property-header">
             <div class="property-title">
-                <h1>강남구 삼성동 프리미엄 아파트</h1>
+                <h2>강남구 삼성동 프리미엄 아파트</h2>
                 <p><i class="fas fa-map-marker-alt"></i> 서울시 강남구 삼성동 123-45</p>
             </div>
-            <div class="property-price">
-                10억 원
-            </div>
+            <div class="property-price">10억 원</div>
         </div>
-
         <div class="property-content">
             <div class="property-gallery">
                 <img src="./images/detail1.jpg" alt="메인 이미지" class="main-image">
                 <div class="thumbnail-grid">
-                    <img src="./images/detail1.jpg" alt="썸네일 1" class="thumbnail">
-                    <img src="./images/detail2.jpg" alt="썸네일 2" class="thumbnail">
-                    <img src="./images/detail3.jpg" alt="썸네일 3" class="thumbnail">
-                    <img src="./images/detail4.jpg" alt="썸네일 4" class="thumbnail">
+                    <img src="./images/detail1.jpg" alt="썸네일1" class="thumbnail">
+                    <img src="./images/detail2.jpg" alt="썸네일2" class="thumbnail">
+                    <img src="./images/detail3.jpg" alt="썸네일3" class="thumbnail">
+                    <img src="./images/detail4.jpg" alt="썸네일4" class="thumbnail">
                 </div>
             </div>
-
             <div class="property-info">
                 <div class="info-section">
                     <h3>매물 정보</h3>
@@ -73,7 +73,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="info-section">
                     <h3>추가 정보</h3>
                     <div class="info-grid">
@@ -85,7 +84,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="action-buttons">
                     <button class="action-btn primary-btn">
                         <i class="fas fa-phone"></i> 연락처 보기
@@ -96,13 +94,11 @@
                 </div>
             </div>
         </div>
-
         <div class="map-container">
             <h3>위치 정보</h3>
             <div id="map"></div>
         </div>
     </main>
-
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-section">
@@ -154,7 +150,5 @@
             <p>&copy; 2024 부동산플러스. All rights reserved.</p>
         </div>
     </footer>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=y2goxe1let"></script>
 </body>
 </html>

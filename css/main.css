@@ -27,7 +27,7 @@
     margin-top: 60px;
     animation: fadeIn 1s ease;
 }
-.hero h1 {
+.hero h2 {
     font-size: 3rem;
     margin-bottom: 1rem;
     opacity: 0;
@@ -124,11 +124,14 @@
     font-size: 1.25rem;
 }
 
+.property-content p.tag {
+    font-size: 1rem;
+}
+
 .property-price {
     margin-top: 1rem;
     text-align: right;
 }
-
 
 /* Categories section animations */
 .categories {
@@ -197,7 +200,7 @@
 }
 
 @media (max-width: 768px) {
-    .hero h1 {
+    .hero h2 {
         font-size: 2rem;
     }
 }
