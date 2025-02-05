@@ -4,6 +4,7 @@ const navMenu = document.querySelector('.nav-menu');
 hamburger.addEventListener('click', () => {
     navMenu.classList.toggle('active');
 });
+
 // Close mobile menu when clicking outside
 document.addEventListener('click', (e) => {
     if (!e.target.closest('.nav-container')) {
@@ -96,51 +97,51 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Close chat modal
-    closeChatBtn.addEventListener('click', function() {
-        chatModal.classList.remove('active');
-    });
+    // closeChatBtn.addEventListener('click', function() {
+    //     chatModal.classList.remove('active');
+    // });
 
-    // Send message function
-    function sendMessage() {
-        const message = messageInput.value.trim();
-        if (message) {
-            // Add user message
-            const userMessage = document.createElement('div');
-            userMessage.className = 'message';
-            userMessage.style.marginLeft = 'auto';
-            userMessage.style.backgroundColor = '#007bff';
-            userMessage.style.color = '#fff';
-            userMessage.textContent = message;
-            chatMessages.appendChild(userMessage);
+    // // Send message function
+    // function sendMessage() {
+    //     const message = messageInput.value.trim();
+    //     if (message) {
+    //         // Add user message
+    //         const userMessage = document.createElement('div');
+    //         userMessage.className = 'message';
+    //         userMessage.style.marginLeft = 'auto';
+    //         userMessage.style.backgroundColor = '#007bff';
+    //         userMessage.style.color = '#fff';
+    //         userMessage.textContent = message;
+    //         chatMessages.appendChild(userMessage);
 
-            // Clear input
-            messageInput.value = '';
+    //         // Clear input
+    //         messageInput.value = '';
 
-            // Auto scroll to bottom
-            chatMessages.scrollTop = chatMessages.scrollHeight;
+    //         // Auto scroll to bottom
+    //         chatMessages.scrollTop = chatMessages.scrollHeight;
 
-            // Simulate response (you can replace this with actual chat functionality)
-            setTimeout(() => {
-                const response = document.createElement('div');
-                response.className = 'message';
-                response.style.backgroundColor = '#f1f1f1';
-                response.textContent = '상담원이 곧 응답드리겠습니다.';
-                chatMessages.appendChild(response);
-                chatMessages.scrollTop = chatMessages.scrollHeight;
-            }, 1000);
-        }
-    }
+    //         // Simulate response (you can replace this with actual chat functionality)
+    //         setTimeout(() => {
+    //             const response = document.createElement('div');
+    //             response.className = 'message';
+    //             response.style.backgroundColor = '#f1f1f1';
+    //             response.textContent = '상담원이 곧 응답드리겠습니다.';
+    //             chatMessages.appendChild(response);
+    //             chatMessages.scrollTop = chatMessages.scrollHeight;
+    //         }, 1000);
+    //     }
+    // }
 
     // Send message on button click
-    sendMessageBtn.addEventListener('click', sendMessage);
+    // sendMessageBtn.addEventListener('click', sendMessage);
 
     // Send message on Enter key
-    messageInput.addEventListener('keypress', function(e) {
-        if (e.key === 'Enter') {
-            sendMessage();
-        }
-    });
+    // messageInput.addEventListener('keypress', function(e) {
+    //     if (e.key === 'Enter') {
+    //         sendMessage();
+    //     }
+    // });
 
     // Hide page up button initially
-    pageUpBtn.style.display = 'none';
+    // pageUpBtn.style.display = 'none';
 });

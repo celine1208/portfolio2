@@ -46,6 +46,7 @@
         <!-- Filter Sidebar -->
         <aside class="filters">
             <button class=filter-btn>검색하기</button>
+            <!-- 매물유형 -->
             <ul class="filter-section">
                 <li class="filter-title">매물 유형</li>
                 <li class="filter-option">
@@ -65,7 +66,7 @@
                     <label for="land">토지</label>
                 </li>
             </ul>
-
+            <!-- 가격대 -->
             <ul class="filter-section">
                 <li class="filter-title">가격대</li>
                 <li class="price-range">
@@ -73,7 +74,7 @@
                     <input type="text" placeholder="최대">
                 </li>
             </ul>
-
+            <!-- 평수 -->
             <ul class="filter-section">
                 <li class="filter-title">평수</li>
                 <li class="filter-option">
@@ -93,7 +94,7 @@
                     <label for="size4">40평 이상</label>
                 </li>
             </ul>
-
+            <!-- 옵션 -->
             <ul class="filter-section">
                 <li class="filter-title">옵션</li>
                 <li class="filter-option">
@@ -110,8 +111,6 @@
                 </li>
             </ul>
         </aside>
-
-        <!-- Property Listings -->
         <section>
             <!-- 정렬 바  -->
             <aside class="options-bar">
@@ -125,8 +124,8 @@
                     </select>
                 </div>
                 <div class="view-options">
-                    <button class="active"><i class="fas fa-th"></i></button>
-                    <button><i class="fas fa-list"></i></button>
+                    <button class="active" title="사진으로 보기"><i class="fas fa-th"></i></button>
+                    <button><i class="fas fa-list" title="목록으로 보기"></i></button>
                 </div>
             </aside>
             <!--  매물 -->
@@ -135,7 +134,7 @@
                 <article class="property-card">
                     <img src="./images/property1.jpg" alt="Property" class="property-image">
                     <div class="property-info">
-                        <span class="property-type">아파트</span>
+                        <p class="property-type">아파트</p>
                         <h3 class="property-title">강남 럭셔리 신축 아파트</h3>
                         <ul class="tags">
                             <li class="tag">역세권</li>
@@ -143,31 +142,31 @@
                             <li class="tag">주차가능</li>
                         </ul>
                         <p class="property-price">12억 원</p>
-                        <dl class="property-details">
-                            <div class="detail-item">
+                        <div class="property-details">
+                            <dl class="detail-item">
                                 <dt><i class="fas fa-ruler-combined"></i></dt>
                                 <dd>32평</dd>
-                            </div>
-                            <div class="detail-item">
+                            </dl>
+                            <dl class="detail-item">
                                 <dt><i class="fas fa-building"></i></dt>
                                 <dd>15층</dd>
-                            </div>
-                            <div class="detail-item">
+                            </dl>
+                            <dl class="detail-item">
                                 <dt><i class="fas fa-map-marker-alt"></i></dt>
                                 <dd>강남구</dd>
-                            </div>
-                            <div class="detail-item">
+                            </dl>
+                            <dl class="detail-item">
                                 <dt><i class="fas fa-calendar"></i></dt>
                                 <dd>2023년</dd>
-                            </div>
-                        </dl>
+                            </dl>
+                        </div>
                         <a class="property-btn" href="./detail.html">자세히 보기</a>
                     </div>
                 </article>
                 <article class="property-card">
                     <img src="./images/property2.jpg" alt="Property" class="property-image">
                     <div class="property-info">
-                        <span class="property-type">오피스텔</span>
+                        <p class="property-type">오피스텔</p>
                         <h3 class="property-title">역삼역 초역세권 오피스텔</h3>
                         <ul class="tags">
                             <li class="tag">역세권</li>
@@ -175,31 +174,31 @@
                             <li class="tag">주차가능</li>
                         </ul>
                         <p class="property-price">5억 원</p>
-                        <dl class="property-details">
-                            <div class="detail-item">
+                        <div class="property-details">
+                            <dl class="detail-item">
                                 <dt><i class="fas fa-ruler-combined"></i></dt>
                                 <dd>20평</dd>
-                            </div>
-                            <div class="detail-item">
+                            </dl>
+                            <dl class="detail-item">
                                 <dt><i class="fas fa-building"></i></dt>
                                 <dd>8층</dd>
-                            </div>
-                            <div class="detail-item">
+                            </dl>
+                            <dl class="detail-item">
                                 <dt><i class="fas fa-map-marker-alt"></i></dt>
                                 <dd>강남구</dd>
-                            </div>
-                            <div class="detail-item">
+                            </dl>
+                            <dl class="detail-item">
                                 <dt><i class="fas fa-calendar"></i></dt>
                                 <dd>2021년</dd>
-                            </div>
-                        </dl>
+                            </dl>
+                        </div>
                         <a class="property-btn" href="./detail.html">자세히 보기</a>
                     </div>
                 </article>
                 <article class="property-card">
                     <img src="./images/property3.jpg" alt="Property" class="property-image">
                     <div class="property-info">
-                        <span class="property-type">상가</span>
+                        <p class="property-type">상가</p>
                         <h3 class="property-title">홍대입구 1층 상가</h3>
                         <ul class="tags">
                             <li class="tag">역세권</li>
@@ -207,55 +206,55 @@
                             <li class="tag">즉시입주</li>
                         </ul>
                         <p class="property-price">임대로 480만원</p>
-                        <dl class="property-details">
-                            <div class="detail-item">
+                        <div class="property-details">
+                            <dl class="detail-item">
                                 <dt><i class="fas fa-ruler-combined"></i></dt>
                                 <dd>25평</dd>
-                            </div>
-                            <div class="detail-item">
+                            </dl>
+                            <dl class="detail-item">
                                 <dt><i class="fas fa-building"></i></dt>
                                 <dd>1층</dd>
-                            </div>
-                            <div class="detail-item">
+                            </dl>
+                            <dl class="detail-item">
                                 <dt><i class="fas fa-map-marker-alt"></i></dt>
                                 <dd>마포구</dd>
-                            </div>
-                            <div class="detail-item">
+                            </dl>
+                            <dl class="detail-item">
                                 <dt><i class="fas fa-calendar"></i></dt>
                                 <dd>2020년</dd>
-                            </div>
-                        </dl>
+                            </dl>
+                        </div>
                         <a class="property-btn" href="./detail.html">자세히 보기</a>
                     </div>
                 </article>
                 <article class="property-card">
                     <img src="./images/property4.jpg" alt="Property" class="property-image">
                     <div class="property-info">
-                        <span class="property-type">토지</span>
+                        <p class="property-type">토지</p>
                         <h3 class="property-title">판교 개발호재 토지</h3>
                         <ul class="tags">
                             <li class="tag">개발호재</li>
                             <li class="tag">근생가능</li>
                         </ul>
                         <p class="property-price">38억원</p>
-                        <dl class="property-details">
-                            <div class="detail-item">
+                        <div class="property-details">
+                            <dl class="detail-item">
                                 <dt><i class="fas fa-ruler-combined"></i></dt>
                                 <dd>250평</dd>
-                            </div>
-                            <div class="detail-item">
+                            </dl>
+                            <dl class="detail-item">
                                 <dt><i class="fas fa-building"></i></dt>
                                 <dd>분당구</dd>
-                            </div>
-                            <div class="detail-item">
+                            </dl>
+                            <dl class="detail-item">
                                 <dt><i class="fas fa-map-marker-alt"></i></dt>
                                 <dd>도로접면</dd>
-                            </div>
-                            <div class="detail-item">
+                            </dl>
+                            <dl class="detail-item">
                                 <dt><i class="fas fa-calendar"></i></dt>
                                 <dd>토지거래허가</dd>
-                            </div>
-                        </dl>
+                            </dl>
+                        </div>
                         <a class="property-btn" href="./detail.html">자세히 보기</a>
                     </div>
                 </article>
