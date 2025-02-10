@@ -19,7 +19,7 @@
         <nav class="navbar">
             <h2 class="hidden">부동산 플러스 이용메뉴</h2>
             <div class="nav-container">
-                <a href="#" class="logo">부동산 플러스</a>
+                <a href="./index.html" class="logo">부동산 플러스</a>
                 <ul class="nav-menu">
                     <li><a href="./index.html"><i class="fas fa-home"></i> 홈</a></li>
                     <li><a href="./company.html"><i class="fas fa-building"></i> 회사소개</a></li>
@@ -30,6 +30,7 @@
                 </ul>
                 <div class="hamburger">
                     <i class="fas fa-bars"></i>
+                    <i class="fa fa-close hidden" ></i>
                 </div>
             </div>
         </nav>
@@ -205,7 +206,7 @@
                             <li class="tag">권리금 없음</li>
                             <li class="tag">즉시입주</li>
                         </ul>
-                        <p class="property-price">임대로 480만원</p>
+                        <p class="property-price">25억원</p>
                         <div class="property-details">
                             <dl class="detail-item">
                                 <dt><i class="fas fa-ruler-combined"></i></dt>
@@ -312,13 +313,25 @@
             <p>&copy; 2024 부동산플러스. All rights reserved.</p>
         </div>
     </footer>
+    <!-- fixed buttons -->
     <div class="fixed-buttons">
         <button id="pageUpBtn" class="fixed-btn" title="페이지 위로">
             <i class="fas fa-arrow-up"></i>
         </button>
-        <button id="chatBtn" class="fixed-btn" title="실시간 상담">
+        <button id="chat-btn" class="fixed-btn" title="실시간 상담">
             <i class="fas fa-comments"></i>
         </button>
+    </div>
+    <!-- Chat Modal -->
+    <div class="chat-window">
+        <div class="chat-header">
+            <p>상담 챗봇</p>
+        </div>
+        <div class="chat-messages"></div>
+        <div class="chat-input">
+            <input type="text" placeholder="메시지를 입력하세요...">
+            <button>전송</button>
+        </div>
     </div>
 </body>
 </html>

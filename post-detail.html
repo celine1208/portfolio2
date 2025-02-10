@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>부동산 플러스 - 게시글</title>
+    <link rel="stylesheet" href="./css/webfont.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/post-detail.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="./js/jquery-3.7.1.js"></script>
+    <script src="./js/common.js" defer></script>
+    <script src="./js/post-detail.js" defer></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <header>
+        <h1 class="hidden">부동산 플러스</h1>
+        <nav class="navbar">
+            <h2 class="hidden">부동산 플러스 이용메뉴</h2>
+            <div class="nav-container">
+                <a href="./index.html" class="logo">부동산 플러스</a>
+                <ul class="nav-menu">
+                    <li><a href="./index.html"><i class="fas fa-home"></i> 홈</a></li>
+                    <li><a href="./company.html"><i class="fas fa-building"></i> 회사소개</a></li>
+                    <li><a href="./product.html"><i class="fas fa-list"></i> 매물찾기</a></li>
+                    <li><a href="./contactus.html"><i class="fas fa-envelope"></i> 문의하기</a></li>
+                    <li><a href="./community.html"><i class="fas fa-users"></i> 커뮤니티</a></li>
+                    <li><a href="./login.html" id="loginLink"><i class="fas fa-user"></i> 로그인/회원가입</a></li>
+                </ul>
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                    <i class="fa fa-close hidden"></i>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="post-container">
+        <div class="post-navigation">
+            <button class="back-btn" onclick="location.href='community.html'">
+                <i class="fas fa-arrow-left"></i> 목록으로
+            </button>
+        </div>
+
+        <article class="post-detail">
+            <div class="post-header">
+                <span class="post-category"></span>
+                <h1 class="post-title"></h1>
+                <div class="post-info">
+                    <div class="author-info">
+                        <span class="post-author"></span>
+                    </div>
+                    <div class="post-meta">
+                        <span class="post-date"><i class="fas fa-calendar"></i></span>
+                        <span class="post-views"><i class="fas fa-eye"></i></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="post-content">
+                <!-- 게시글 내용이 여기에 동적으로 삽입됩니다 -->
+            </div>
+
+            <div class="post-actions">
+                <!-- 게시글 작성자만 볼 수 있는 버튼들 -->
+            </div>
+
+            <div class="comment-section">
+                <h2>댓글</h2>
+                <form class="comment-form">
+                    <textarea id="commentContent" placeholder="댓글을 입력하세요" required></textarea>
+                    <button type="submit" class="submit-comment">
+                        <i class="fas fa-paper-plane"></i> 댓글 작성
+                    </button>
+                </form>
+
+                <div class="comments-list">
+                    <!-- 댓글들이 여기에 동적으로 삽입됩니다 -->
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <p>회사 소개</p>
+                <ul class="footer-links">
+                    <li><a href="#"><i class="fas fa-building"></i> 회사 개요</a></li>
+                    <li><a href="#"><i class="fas fa-history"></i> 연혁</a></li>
+                    <li><a href="#"><i class="fas fa-map-marker-alt"></i> 오시는 길</a></li>
+                    <li><a href="#"><i class="fas fa-handshake"></i> 제휴문의</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <p>매물 정보</p>
+                <ul class="footer-links">
+                    <li><a href="#"><i class="fas fa-building"></i> 아파트</a></li>
+                    <li><a href="#"><i class="fas fa-city"></i> 오피스텔</a></li>
+                    <li><a href="#"><i class="fas fa-store"></i> 상가</a></li>
+                    <li><a href="#"><i class="fas fa-map"></i> 토지</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <p>고객센터</p>
+                <ul class="footer-links">
+                    <li><a href="#"><i class="fas fa-question-circle"></i> 자주 묻는 질문</a></li>
+                    <li><a href="#"><i class="fas fa-envelope"></i> 1:1 문의</a></li>
+                    <li><a href="#"><i class="fas fa-exclamation-circle"></i> 공지사항</a></li>
+                    <li><a href="#"><i class="fas fa-phone"></i> 전화상담</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <p>연락처</p>
+                <ul class="footer-contact-info">
+                    <li><a href="tel:02-1234-5678"><i class="fas fa-phone"></i>02-1234-5678</a></li>
+                    <li><a href="mailto:estel2721@gmail.com"><i class="fas fa-envelope"></i>estel2721@gmail.com</a></li>
+                    <li><a href="#"><i class="fas fa-clock"></i>평일 09:00 - 18:00</a></li>
+                </ul>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-blogger-b"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>상호: (주)부동산플러스 | 대표: 홍길동 | 사업자등록번호: 123-45-67890</p>
+            <p>주소: 서울특별시 강남구 테헤란로 123 부동산플러스빌딩 15층</p>
+            <p>중개업등록번호: 제12345-67890호 | 개인정보책임관리자: 홍길동</p>
+            <p>&copy; 2024 부동산플러스. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Fixed Buttons -->
+    <div class="fixed-buttons">
+        <button id="pageUpBtn" class="fixed-btn" title="페이지 위로">
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        <button id="chat-btn" class="fixed-btn" title="실시간 상담">
+            <i class="fas fa-comments"></i>
+        </button>
+    </div>
+
+    <!-- Chat Window -->
+    <div class="chat-window">
+        <div class="chat-header">
+            <p>상담 챗봇</p>
+        </div>
+        <div class="chat-messages"></div>
+        <div class="chat-input">
+            <input type="text" placeholder="메시지를 입력하세요...">
+            <button>전송</button>
+        </div>
+    </div>
+</body>
+</html>

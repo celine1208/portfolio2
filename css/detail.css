@@ -71,7 +71,8 @@
     border-radius: calc(var(--radius) / 2);
 }.info-item span {
     color: var(--text-light);
-}.map-container {
+}
+.map-container {
     margin-top: 20px;
     background: var(--surface);
     padding: 20px;

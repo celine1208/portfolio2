@@ -1,194 +1,136 @@
-// board.js
-let currentPost = null;
-const defaultUser = "사용자"; // 실제로는 로그인 시스템과 연동 필요
+document.addEventListener('DOMContentLoaded', function () {
+    const STORAGE_KEY = 'communityPosts';
+    const tabButtons = document.querySelectorAll('.tab-btn');
+    const searchInput = document.querySelector('.search-box input');
+    const searchButton = document.querySelector('.search-box button');
+    const writeButton = document.querySelector('.write-btn');
+    const paginationLinks = document.querySelectorAll('.pagination a');
 
-// localStorage에서 게시글 데이터 가져오기
-function getPosts() {
-    const posts = localStorage.getItem('posts');
-    return posts ? JSON.parse(posts) : [];
-}
+    let currentPage = 1;
+    let currentCategory = '전체글';
+    let currentSearch = '';
 
-// 게시글 저장하기
-function savePosts(posts) {
-    localStorage.setItem('posts', JSON.stringify(posts));
-}
+    function displayPosts() {
+        const postsContainer = document.querySelector('.posts');
+        postsContainer.innerHTML = '';
+        const posts = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
 
-// 게시글 목록 표시
-function displayPosts(category = '') {
-    const posts = getPosts();
-    const filteredPosts = category ? posts.filter(post => post.category === category) : posts;
-    const postsContainer = document.querySelector('.posts');
-    postsContainer.innerHTML = '';
+        posts.forEach(post => {
+            const postElement = createPostElement(post);
+            postsContainer.appendChild(postElement);
+        });
 
-    filteredPosts.forEach(post => {
-        const postElement = document.createElement('div');
-        postElement.className = 'post-item';
-        postElement.innerHTML = `
-            <span class="badge ${getCategoryBadgeClass(post.category)}">${getCategoryName(post.category)}</span>
+        filterPosts();
+    }
+
+    function createPostElement(post) {
+        const div = document.createElement('div');
+        div.className = 'post-item';
+        div.dataset.postId = post.id;
+        div.innerHTML = `
+            <span class="badge ${post.category}">${getCategoryName(post.category)}</span>
             <div class="post-title">${post.title}</div>
             <div class="post-meta">
                 <span><i class="fas fa-user"></i> ${post.author}</span>
                 <span><i class="fas fa-calendar"></i> ${post.date}</span>
-                <span><i class="fas fa-eye"></i> ${post.views}</span>
+                <span><i class="fas fa-eye"></i> ${post.views || 0}</span>
             </div>
         `;
-        postElement.onclick = () => viewPost(post.id);
-        postsContainer.appendChild(postElement);
-    });
-}
-
-// 카테고리 뱃지 클래스 반환
-function getCategoryBadgeClass(category) {
-    const classes = {
-        'news': 'notice',
-        'trend': 'hot',
-        'review': 'review',
-        'qna': 'qna',
-        'free': 'notice'
-    };
-    return classes[category] || 'notice';
-}
-
-// 카테고리 한글명 반환
-function getCategoryName(category) {
-    const names = {
-        'news': '뉴스',
-        'trend': '동향',
-        'review': '후기',
-        'qna': '질문',
-        'free': '자유'
-    };
-    return names[category] || '기타';
-}
-
-// 글쓰기 모달 열기
-function openWriteModal() {
-    document.getElementById('writeModal').style.display = 'block';
-}
-
-// 모달 닫기
-function closeModal() {
-    document.getElementById('writeModal').style.display = 'none';
-    document.getElementById('postTitle').value = '';
-    document.getElementById('postContent').value = '';
-    document.getElementById('postCategory').value = '';
-    currentPost = null;
-}
-
-// 게시글 저장
-function savePost() {
-    const title = document.getElementById('postTitle').value;
-    const content = document.getElementById('postContent').value;
-    const category = document.getElementById('postCategory').value;
-
-    if (!title || !content || !category) {
-        alert('모든 필드를 입력해주세요.');
-        return;
+        div.addEventListener('click', function () {
+            // 조회수 증가 로직
+            const posts = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
+            const postIndex = posts.findIndex(p => p.id === post.id);
+            if (postIndex !== -1) {
+                posts[postIndex].views = (posts[postIndex].views || 0) + 1;
+                localStorage.setItem(STORAGE_KEY, JSON.stringify(posts));
+            }
+            window.location.href = `post-detail.html?id=${post.id}`;
+        });
+        return div;
     }
 
-    const posts = getPosts();
-    const now = new Date().toLocaleDateString();
-
-    if (currentPost) {
-        // 게시글 수정
-        const index = posts.findIndex(post => post.id === currentPost.id);
-        if (index !== -1) {
-            posts[index] = {
-                ...posts[index],
-                title,
-                content,
-                category,
-                lastModified: now
-            };
-        }
-    } else {
-        // 새 게시글 작성
-        const newPost = {
-            id: uuid.v4(),
-            title,
-            content,
-            category,
-            author: defaultUser,
-            date: now,
-            views: 0
+    function getCategoryName(category) {
+        const categoryNames = {
+            hot: '인기글',
+            notice: '공지사항',
+            review: '매물후기',
+            qna: '질문/답변',
+            free: '자유게시판'
         };
-        posts.unshift(newPost);
+        return categoryNames[category] || '기타';
     }
 
-    savePosts(posts);
-    closeModal();
-    displayPosts();
-}
+    function filterPosts() {
+        const postItems = document.querySelectorAll('.post-item');
 
-// 게시글 보기
-function viewPost(postId) {
-    const posts = getPosts();
-    const post = posts.find(p => p.id === postId);
-    if (!post) return;
+        postItems.forEach(post => {
+            const category = post.querySelector('.badge').textContent;
+            const title = post.querySelector('.post-title').textContent;
+            const author = post.querySelector('.fa-user').nextSibling.textContent.trim();
 
-    // 조회수 증가
-    post.views = (post.views || 0) + 1;
-    savePosts(posts);
+            const categoryMatch = currentCategory === '전체글' || category === currentCategory;
+            const searchMatch = currentSearch === '' ||
+                title.toLowerCase().includes(currentSearch.toLowerCase()) ||
+                author.toLowerCase().includes(currentSearch.toLowerCase());
 
-    document.getElementById('viewTitle').textContent = post.title;
-    document.getElementById('viewAuthor').innerHTML = `<i class="fas fa-user"></i> ${post.author}`;
-    document.getElementById('viewDate').innerHTML = `<i class="fas fa-calendar"></i> ${post.date}`;
-    document.getElementById('viewViews').innerHTML = `<i class="fas fa-eye"></i> ${post.views}`;
-    document.getElementById('viewContent').textContent = post.content;
-    
-    currentPost = post;
-    document.getElementById('viewModal').style.display = 'block';
-}
+            post.style.display = categoryMatch && searchMatch ? 'block' : 'none';
+        });
 
-// 게시글 수정
-function editPost() {
-    if (!currentPost) return;
+        updatePagination();
+    }
 
-    document.getElementById('postTitle').value = currentPost.title;
-    document.getElementById('postContent').value = currentPost.content;
-    document.getElementById('postCategory').value = currentPost.category;
+    function updatePagination() {
+        paginationLinks.forEach(link => {
+            if (link.textContent === currentPage.toString()) {
+                link.classList.add('active');
+            } else {
+                link.classList.remove('active');
+            }
+        });
+    }
 
-    closeViewModal();
-    openWriteModal();
-}
+    function handleSearch() {
+        currentSearch = searchInput.value.trim();
+        filterPosts();
+    }
 
-// 게시글 삭제
-function deletePost() {
-    if (!currentPost || !confirm('정말 삭제하시겠습니까?')) return;
+    // 이벤트 리스너 설정
+    searchButton.addEventListener('click', handleSearch);
+    searchInput.addEventListener('keypress', e => {
+        if (e.key === 'Enter') handleSearch();
+    });
 
-    const posts = getPosts().filter(post => post.id !== currentPost.id);
-    savePosts(posts);
-    closeViewModal();
-    displayPosts();
-}
-
-// 상세보기 모달 닫기
-function closeViewModal() {
-    document.getElementById('viewModal').style.display = 'none';
-    currentPost = null;
-}
-
-// 이벤트 리스너 등록
-document.addEventListener('DOMContentLoaded', () => {
-    displayPosts();
-
-    // 글쓰기 버튼
-    document.querySelector('.write-btn').addEventListener('click', openWriteModal);
-
-    // 카테고리 탭
-    document.querySelectorAll('.tab-btn').forEach(btn => {
-        btn.addEventListener('click', (e) => {
-            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-            e.target.classList.add('active');
-            
-            const category = e.target.textContent === '전체글' ? '' : 
-                            e.target.textContent === '부동산 뉴스' ? 'news' :
-                            e.target.textContent === '시장동향' ? 'trend' :
-                            e.target.textContent === '매물후기' ? 'review' :
-                            e.target.textContent === '질문/답변' ? 'qna' :
-                            e.target.textContent === '자유게시판' ? 'free' : '';
-            
-            displayPosts(category);
+    tabButtons.forEach(button => {
+        button.addEventListener('click', function () {
+            tabButtons.forEach(btn => btn.classList.remove('active'));
+            this.classList.add('active');
+            currentCategory = this.textContent;
+            filterPosts();
         });
     });
+
+    paginationLinks.forEach(link => {
+        link.addEventListener('click', function (e) {
+            e.preventDefault();
+            paginationLinks.forEach(l => l.classList.remove('active'));
+
+            if (this.textContent !== '') {
+                currentPage = parseInt(this.textContent);
+                this.classList.add('active');
+            } else if (this.querySelector('.fa-chevron-left')) {
+                if (currentPage > 1) currentPage--;
+            } else if (this.querySelector('.fa-chevron-right')) {
+                if (currentPage < 5) currentPage++;
+            }
+
+            updatePagination();
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        });
+    });
+
+    writeButton.addEventListener('click', () => {
+        window.location.href = 'post.html';
+    });
+
+    displayPosts();
 });

@@ -9,8 +9,8 @@
     <link rel="stylesheet" href="./css/common.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=y2goxe1let"></script>
     <script src="./js/jquery-3.7.1.js"></script>
+    <script type="text/javascript" src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=hpl7ns628a"></script>
     <script src="./js/common.js" defer></script>
     <script src="./js/detail.js" defer></script>
 </head>
@@ -21,7 +21,7 @@
         <nav class="navbar">
         <h2 class="hidden">부동산 플러스 이용메뉴</h2>
         <div class="nav-container">
-            <a href="#" class="logo">부동산 플러스</a>
+            <a href="./index.html" class="logo">부동산 플러스</a>
             <ul class="nav-menu">
                 <li><a href="./index.html"><i class="fas fa-home"></i> 홈</a></li>
                 <li><a href="./company.html"><i class="fas fa-building"></i> 회사소개</a></li>
@@ -32,6 +32,7 @@
             </ul>
             <div class="hamburger">
                 <i class="fas fa-bars"></i>
+                <i class="fa fa-close hidden" ></i>
             </div>
         </div>
     </nav>
@@ -96,7 +97,8 @@
         </div>
         <div class="map-container">
             <h3>위치 정보</h3>
-            <div id="map"></div>
+            <div id="map">
+            </div>
         </div>
     </main>
     <footer class="footer">

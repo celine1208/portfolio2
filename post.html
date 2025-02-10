@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>회사소개 - 부동산 플러스</title>
-    <link rel="stylesheet" href="./css/common.css">
-    <link rel="stylesheet" href="./css/company.css">
+    <title>부동산 플러스 - 게시글 작성</title>
     <link rel="stylesheet" href="./css/webfont.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/community.css">
+    <link rel="stylesheet" href="./css/post.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <script src="./js/jquery-3.7.1.js"></script>
     <script src="./js/common.js" defer></script>
-    <script src="./js/company.js" defer></script>
+    <script src="./js/post.js" defer></script>
 </head>
 <body>
-    <!-- Navigation -->
     <header>
-        <h1 class="hidden">부동산 플러스 회사소개</h1>
+        <h1 class="hidden">부동산 플러스</h1>
         <nav class="navbar">
             <h2 class="hidden">부동산 플러스 이용메뉴</h2>
             <div class="nav-container">
@@ -35,95 +35,46 @@
             </div>
         </nav>
     </header>
-    <!-- Company Header -->
-    <section class="company-header">
-        <h2>회사소개</h2>
-        <p>고객의 신뢰를 바탕으로 최고의 부동산 서비스를 제공합니다</p>
+    <section class="post-header">
+        <h2>게시글 작성</h2>
+        <p>커뮤니티 이용규칙을 준수해주세요. 불건전한 내용은 제재될 수 있습니다.</p>
     </section>
-    <!-- Mission & Vision -->
-    <main class="content-section">
-        <section>
-            <h2 class="hidden">미션과 비전</h2>
-            <div class="mission-vision">
-                <article class="info-card">
-                    <h3>미션</h3>
-                    <p>고객의 성공적인 부동산 거래를 위해 전문적이고 정직한 서비스를 제공하며, 부동산 시장의 새로운 기준을 만들어갑니다.</p>
-                </article>
-                <article class="info-card">
-                    <h3>비전</h3>
-                    <p>디지털 혁신을 통해 부동산 거래의 새로운 패러다임을 제시하고, 대한민국 최고의 부동산 플랫폼으로 성장하겠습니다.</p>
-                </article>
+    <section class="post-write">
+        <form id="postForm" class="post-form">
+            <div class="form-group">
+                <label for="category">카테고리</label>
+                <select id="category" required>
+                    <option value="">카테고리 선택</option>
+                    <option value="notice">공지사항</option>
+                    <option value="review">매물후기</option>
+                    <option value="qna">질문/답변</option>
+                    <option value="free">자유게시판</option>
+                </select>
             </div>
-        </section>
-        <!-- Company History -->
-       <section>
-            <h2>회사 연혁</h2>
-            <div class="timeline">
-                <dl class="timeline-item">
-                    <dt>2024년</dt>
-                    <dd>서울 지역 거래 중개 건수 1위 달성</dd>
-                </dl>
-                <dl class="timeline-item">
-                    <dt>2023년</dt>
-                    <dd>AI 매물 맞춤 추천 시스템 도입</dd>
-                </dl>
-                <dl class="timeline-item">
-                    <dt>2022년</dt>
-                    <dd>전국 지점 50개 달성</dd>
-                </dl>
-                <dl class="timeline-item">
-                    <dt>2021년</dt>
-                    <dd>회사 설립</dd>
-                </dl>
+            <div class="form-group">
+                <label for="title">제목</label>
+                <input type="text" id="title" placeholder="제목을 입력하세요" required>
             </div>
-       </section>
-        <!-- Team -->
-        <section>
-            <h2>임직원 소개</h2>
-            <div class="team-grid">
-                <figure class="team-member">
-                    <img src="./images/ceo.jpg" alt="CEO">
-                    <p>대표이사</p>
-                    <figcaption>김대표</figcaption>
-                </figure>
-                <figure class="team-member">
-                    <img src="./images/cto.jpg" alt="CTO">
-                    <p>기술이사</p>
-                    <figcaption>이기술</figcaption>
-                </figure>
-                <figure class="team-member">
-                    <img src="./images/sales.jpg" alt="Sales Director">
-                    <p>영업이사</p>
-                    <figcaption>박영업</figcaption>
-                </figure>
+            <div class="form-group">
+                <label for="content">내용</label>
+                <textarea id="content" placeholder="내용을 입력하세요" required></textarea>
             </div>
-        </section>
-
-        <!-- Contact Information -->
-        <section>
-            <h2>찾아오시는 길</h2>
-                <figure class="map-container">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3144.2979736016446!2d128.62457857356574!3d35.880825247968524!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3565e195cf24f40d%3A0xf4ed22431d783ec8!2z7ZWc6rWtSVTqtZDsnKHsm5A!5e0!3m2!1sen!2skr!4v1738581490559!5m2!1sen!2skr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                </figure>
-                <ul class="contact-info">
-                    <li class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <p>주소</p>
-                        <a href="https://maps.app.goo.gl/Dwf4BYE74npr7fuf9">대구 동구 동대구로 566</a>
-                    </li>
-                    <li class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <p>전화</p>
-                        <a href="tel:01033002721">02-1234-5678</a>
-                    </li>
-                    <li class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <p>이메일</p>
-                        <a href="mailto:estel2721@gmail.com">estel2721@gmail.com</a>
-                    </li>
-                </ul>
-        </section>
-    </main>
+            <div class="form-group">
+                <label>파일 첨부</label>
+                <div class="file-upload">
+                    <input type="file" id="fileInput" multiple>
+                    <button type="button" class="upload-btn">
+                        <i class="fas fa-upload"></i> 파일 선택
+                    </button>
+                </div>
+                <div id="fileList" class="file-list"></div>
+            </div>
+            <div class="form-actions">
+                <button type="button" class="cancel-btn">취소</button>
+                <button type="submit" class="submit-btn">등록하기</button>
+            </div>
+        </form>
+    </section>
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-section">

@@ -58,6 +58,8 @@
     font-size: 1rem;
 }
 .search-btn {
+    font-family: 'GmarketSansMedium';
+    font-size: 1rem;
     padding: 1rem 2rem;
     color: white;
     background-color: transparent;
